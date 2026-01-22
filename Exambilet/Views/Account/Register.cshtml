@@ -1,0 +1,36 @@
+﻿@using Exambilet.ViewModels
+
+@model RegisterVM
+<div class="container mt-5" style="padding: 80px;">
+    <h6>Register Page</h6>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="FullName" class="form-label">FullName</label>
+            <input asp-for="FullName" class="form-control" placeholder="FullName">
+            <span asp-validation-for="FullName" style="color:red"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="UserName" class="form-label">UserName</label>
+            <input asp-for="UserName" class="form-control" placeholder="UserName">
+            <span asp-validation-for="UserName" style="color:red"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" placeholder="Email">
+            <span asp-validation-for="Email" style="color:red"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input asp-for="Password" class="form-control" placeholder="Password">
+            <span asp-validation-for="Password" style="color:red"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ConfirmPassword" class="form-label">ConfirmPassword</label>
+            <input asp-for="ConfirmPassword" class="form-control" placeholder="Password">
+            <span asp-validation-for="ConfirmPassword" style="color:red"></span>
+        </div>
+
+        <button class="btn btn-primary">Register Me!</button>
+   
+    </form>
+</div>

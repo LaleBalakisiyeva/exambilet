@@ -1,0 +1,31 @@
+﻿@using Exambilet.Areas.Admin.ViewModels.Games
+@model UpdateGameVM
+
+<div class="container">
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Name">
+            <span asp-validation-for="Name" style="color:red"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ImageFile" class="form-label">ImageFile</label>
+            <input asp-for="ImageFile" class="form-control" placeholder="ImageFile">
+            <span asp-validation-for="ImageFile" style="color:red"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Price</label>
+            <input asp-for="Price" class="form-control" placeholder="Price">
+            <span asp-validation-for="Price" style="color:red"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sale" class="form-label">Sale</label>
+            <input asp-for="Sale" class="form-control" placeholder="Price">
+            <span asp-validation-for="Sale" style="color:red"></span>
+        </div>
+
+
+        <button asp-controller="Game" asp-action="Update" type="submit" class="btn btn-primary">Submit</button>
+        <button asp-controller="Game" asp-action="Index" class="btn btn-primary">Cancel</button>
+    </form>
+</div>

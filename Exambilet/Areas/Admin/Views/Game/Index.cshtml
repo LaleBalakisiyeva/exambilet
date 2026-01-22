@@ -1,0 +1,43 @@
+﻿@using Exambilet.Models
+
+@model List<Game>
+  <!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Game Table</h6>
+        <a asp-controller="Game" asp-action="Create"type="button" class="btn btn-success">Add Game</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                         <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    @foreach (Game game in Model)
+                    {
+                        <tr>
+                            <td>@game.Id</td>
+                            <td>@game.Name</td>
+                            <td>@game.Price</td>
+                            <td> <img src="~/assets/images/@game.Image" ></td>
+                            <td>
+                                <a asp-controller="Game" asp-action="Update" asp-route-id="@game.Id" type="button" class="btn btn-primary">Update</a>
+                                <a asp-controller="Game" asp-action="Delete" asp-route-id="@game.Id" type="button" class="btn btn-danger">Delete</a>
+                            </td>
+                          
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
